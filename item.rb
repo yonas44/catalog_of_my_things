@@ -6,4 +6,9 @@ class Item
     @publish_date = publish_date
     @archived = archived
   end
+
+  def add_label(label)
+    @label = label
+    label.items << self
+  end
 end
