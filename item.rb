@@ -11,4 +11,10 @@ class Item
     @label = label
     label.items << self
   end
+
+  # Adds the relation between Item and Author classes so that we can pass author as an object inside item
+  def add_author(author)
+    @author = author
+    author.items << self
+  end
 end
