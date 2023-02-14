@@ -30,4 +30,3 @@ class Item
     @archived = true if can_be_archived?
   end
 end
-Item.new('2013-02-10').can_be_archived?
