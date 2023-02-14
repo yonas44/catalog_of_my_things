@@ -18,6 +18,3 @@ class Item
     author.items << self
   end
 end
-
-
-puts Time.now < 10.minutes.ago

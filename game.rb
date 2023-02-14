@@ -12,8 +12,8 @@ class Game < Item
 
   def can_be_archived?
     cur_date = Date.today
-    pub_date = Date.parse(@publish_date)
-    req_date = ((cur_date - pub_date) / 365).floor > 2
+    last_played_date = Date.parse(@last_played_at)
+    req_date = ((cur_date - last_played_date) / 365).floor > 2
     super && req_date
   end
 end
