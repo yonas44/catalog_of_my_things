@@ -2,7 +2,7 @@ require_relative './modules/music_methods'
 
 class App
   include MusicMethods
-  
+
   attr_reader :options
 
   def initialize
@@ -18,21 +18,16 @@ class App
       '9': method(:add_game),
       '10': method(:exit)
     }
+
+    @music_album_arr = File.exist?(MUSIC_ALBUM_FILE) ? JSON.parse(File.read(MUSIC_ALBUM_FILE)) : []
+    @genre_arr = File.exist?(GENRE_FILE) ? JSON.parse(File.read(GENRE_FILE)) : []
   end
 
   def list_all_books
     puts 'Hello'
   end
 
-  # def list_all_music_albums
-  #   puts 'Hello'
-  # end
-
   def list_all_games
-    puts 'Hello'
-  end
-
-  def list_all_genres
     puts 'Hello'
   end
 
@@ -47,10 +42,6 @@ class App
   def add_book
     puts 'Hello'
   end
-
-  # def add_music_album
-  #   puts 'Hello'
-  # end
 
   def add_game
     puts 'Hello'
