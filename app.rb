@@ -1,4 +1,8 @@
+require_relative './modules/music_methods'
+
 class App
+  include MusicMethods
+  
   attr_reader :options
 
   def initialize
@@ -20,9 +24,9 @@ class App
     puts 'Hello'
   end
 
-  def list_all_music_albums
-    puts 'Hello'
-  end
+  # def list_all_music_albums
+  #   puts 'Hello'
+  # end
 
   def list_all_games
     puts 'Hello'
@@ -44,9 +48,9 @@ class App
     puts 'Hello'
   end
 
-  def add_music_album
-    puts 'Hello'
-  end
+  # def add_music_album
+  #   puts 'Hello'
+  # end
 
   def add_game
     puts 'Hello'
