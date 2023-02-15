@@ -9,6 +9,16 @@ module MusicMethods
     @@music_album_arr = File.empty?(MUSIC_ALBUM_FILE) ? [] : JSON.parse(File.read(MUSIC_ALBUM_FILE))
     @@genre_arr = []
 
+    def list_all_music_albums
+        if (File.empty?(MUSIC_ALBUM_FILE))
+            puts 'No music album to show!'
+        else
+            @@music_album_arr.each_with_index do |item, id|
+            index = id + 1
+                puts "#{index} - Name: #{item["name"]} Artist: #{item["artist"]} Genre: #{item["genre"]}  On Spotify: #{item["on_spotify"]}  "
+            end
+        end
+    end
 
     def add_music_album
         print 'Enter Album name: '
