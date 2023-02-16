@@ -1,5 +1,5 @@
 require_relative '../label'
-require_relative 'label_mock'
+require_relative 'mock_helper'
 
 RSpec.describe Label do
   before :all do
