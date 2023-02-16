@@ -1,6 +1,4 @@
 require_relative '../book'
-require_relative '../item'
-require 'date'
 
 RSpec.describe Book do
   before :all do
@@ -23,7 +21,7 @@ RSpec.describe Book do
   end
 
   it '#can_be_archived?' do
-    expect(@book1.can_be_archived?).to eq true
-    expect(@book2.can_be_archived?).to eq false
+    expect(@book1.can_be_archived?).to be true
+    expect(@book2.can_be_archived?).to be false
   end
 end
