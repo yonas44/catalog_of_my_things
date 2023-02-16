@@ -1,5 +1,10 @@
+require_relative 'book_module'
+require_relative 'label_module'
+
 class App
   attr_reader :options
+  include BookModule
+  include LabelModule
 
   def initialize
     @options = {
@@ -16,10 +21,6 @@ class App
     }
   end
 
-  def list_all_books
-    puts 'Hello'
-  end
-
   def list_all_music_albums
     puts 'Hello'
   end
@@ -32,15 +33,7 @@ class App
     puts 'Hello'
   end
 
-  def list_all_labels
-    puts 'Hello'
-  end
-
   def list_all_authors
-    puts 'Hello'
-  end
-
-  def add_book
     puts 'Hello'
   end
 
@@ -54,5 +47,10 @@ class App
 
   def exit
     puts 'Hello'
+  end
+
+  def ask_question(question)
+    print question
+    gets.chomp
   end
 end
