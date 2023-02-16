@@ -10,6 +10,6 @@ RSpec.describe Label do
     item = Item.new('2021-01-01')
     @label1.add_item(item)
     expect(@label1.items.length).to eq 1
-    expect(item.label.title).to eq 'label-1'
+    expect(item.label).to eq 'label-1'
   end
 end

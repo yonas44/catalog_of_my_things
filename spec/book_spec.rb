@@ -1,4 +1,6 @@
 require_relative '../book'
+require_relative '../item'
+require 'date'
 
 RSpec.describe Book do
   before :all do
@@ -9,7 +11,7 @@ RSpec.describe Book do
   it '#add_label' do
     label = double(title: 'label1', items: [])
     @book1.add_label(label)
-    expect(@book1.label.title).to eq 'label1'
+    expect(@book1.label).to eq 'label1'
     expect(label.items.length).to eq 1
   end
 
@@ -21,8 +23,7 @@ RSpec.describe Book do
   end
 
   it '#can_be_archived?' do
-  p @book1
-    # expect(@book1.can_be_archived?).to be true
-    expect(@book2.can_be_archived?).to be false
+    expect(@book1.can_be_archived?).to eq true
+    expect(@book2.can_be_archived?).to eq false
   end
 end
