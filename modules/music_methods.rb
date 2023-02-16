@@ -6,9 +6,6 @@ module MusicMethods
   MUSIC_ALBUM_FILE = './store/music_album.json'.freeze
   GENRE_FILE = './store/genre.json'.freeze
 
-  #   @music_album_arr = File.exist?(MUSIC_ALBUM_FILE) ? JSON.parse(File.read(MUSIC_ALBUM_FILE)) : []
-  #   @genre_arr = File.exist?(GENRE_FILE) ? JSON.parse(File.read(GENRE_FILE)) : []
-
   def list_all_music_albums
     if !File.exist?(MUSIC_ALBUM_FILE) || File.empty?(MUSIC_ALBUM_FILE)
       puts 'No music album to show!'
