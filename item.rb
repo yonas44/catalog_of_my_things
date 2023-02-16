@@ -1,3 +1,5 @@
+require 'date'
+
 class Item
   attr_accessor :genre, :author, :source, :label, :publish_date, :archived
 
@@ -5,6 +7,11 @@ class Item
     @id = Random.rand(1..10_000)
     @publish_date = publish_date
     @archived = archived
+  end
+
+  def add_genre(genre)
+    @genre = genre
+    genre.items.push(self) unless genre.items.include?(self)
   end
 
   def add_label(label)

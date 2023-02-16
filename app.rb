@@ -1,7 +1,11 @@
 require_relative 'book_module'
 require_relative 'label_module'
 
+require_relative './modules/music_methods'
+
 class App
+  include MusicMethods
+
   attr_reader :options
   include BookModule
   include LabelModule
@@ -19,6 +23,13 @@ class App
       '9': method(:add_game),
       '10': method(:exit)
     }
+
+    @music_album_arr = File.exist?(MUSIC_ALBUM_FILE) ? JSON.parse(File.read(MUSIC_ALBUM_FILE)) : []
+    @genre_arr = File.exist?(GENRE_FILE) ? JSON.parse(File.read(GENRE_FILE)) : []
+  end
+
+  def list_all_books
+    puts 'Hello'
   end
 
   def list_all_music_albums
@@ -33,7 +44,15 @@ class App
     puts 'Hello'
   end
 
+  def list_all_labels
+    puts 'Hello'
+  end
+
   def list_all_authors
+    puts 'Hello'
+  end
+
+  def add_book
     puts 'Hello'
   end
 
