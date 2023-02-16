@@ -15,8 +15,14 @@ class Item
   end
 
   def add_label(label)
-    @label = label
-    label.items << self
+    @label = label.title
+    label.items << to_json unless label.items.include?(to_json)
+  end
+
+  # Adds the relation between Item and Author classes so that we can pass author as an object inside item
+  def add_author(author)
+    @author = author
+    author.items << self
   end
 
   def can_be_archived?
@@ -25,9 +31,4 @@ class Item
 
     ((cur_date - pub_date) / 365).floor > 10
   end
-
-  def move_to_archive
-    @archived = true if can_be_archived?
-  end
 end
-Item.new('2013-02-10').can_be_archived?
