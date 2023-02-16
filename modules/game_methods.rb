@@ -34,7 +34,6 @@ module GameMethods
     @games = File.exist?(GAME_FILE) ? JSON.parse(File.read(GAME_FILE)) : []
     @authors = File.exist?(AUTHOR_FILE) ? JSON.parse(File.read(AUTHOR_FILE)) : []
 
-
     @games.push({
                   multiplayer: multiplayer,
                   last_played_at: last_played_at,
