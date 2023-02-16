@@ -14,12 +14,12 @@ class Book < Item
     super || @cover_state == 'bad'
   end
 
-  def to_json(*args)
+  def to_json
     { 
       publisher: @publisher, 
       cover_state: @cover_state,
       publish_date: @publish_date,
-      label: self.label 
+      label: self.label
     }
   end
 end

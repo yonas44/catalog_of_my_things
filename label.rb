@@ -16,7 +16,7 @@ class Label
     item.label = self.title
   end
 
-  def to_json(*args)
+  def to_json
     { 
       title: @title, 
       color: @color, 

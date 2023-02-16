@@ -10,22 +10,17 @@ module LabelModule
     def add_label(item)
         title = ask_question('Label title: ').capitalize
         color = ask_question('Label color: ').capitalize
-        stored_label = nil
         label_position = nil
 
         fetch_labels.each_with_index { |label, index| 
             if label["title"] == title && label["color"] == color
-                stored_label = label
                 label_position = index
             end
         }
-        label = nil
-        if stored_label
-            label = Label.new(stored_label["title"], stored_label["color"])
-            label.items = stored_label["items"]
-        else
-            label = Label.new(title, color)
-        end
+        
+        label = Label.new(title, color)
+        label.items = fetch_labels[label_position]["items"] if label_position
+        
         item.add_label(label)
         store_label(label, label_position)
         puts "label added successfully"
