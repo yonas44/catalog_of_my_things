@@ -32,10 +32,6 @@ class App
     @author = File.exist?(AUTHOR_FILE) ? JSON.parse(File.read(AUTHOR_FILE)) : []
   end
 
-  def exit
-    puts 'Hello'
-  end
-
   def ask_question(question)
     print question
     gets.chomp
