@@ -27,6 +27,9 @@ class App
 
     @music_album_arr = File.exist?(MUSIC_ALBUM_FILE) ? JSON.parse(File.read(MUSIC_ALBUM_FILE)) : []
     @genre_arr = File.exist?(GENRE_FILE) ? JSON.parse(File.read(GENRE_FILE)) : []
+
+    @game = File.exist?(GAME_FILE) ? JSON.parse(File.read(GAME_FILE)) : []
+    @author = File.exist?(AUTHOR_FILE) ? JSON.parse(File.read(AUTHOR_FILE)) : []
   end
 
   def exit
