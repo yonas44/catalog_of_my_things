@@ -1,5 +1,5 @@
 require_relative '../genre'
-require_relative './genre_helper'
+require_relative './mock_helper'
 
 describe Genre do
   before(:all) do
