@@ -8,7 +8,7 @@ class App
   include BookModule
   include LabelModule
   include GameMethods
-  
+
   attr_reader :options
 
   def initialize
