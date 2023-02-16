@@ -1,6 +1,7 @@
 require_relative './modules/book_module'
 require_relative './modules/label_module'
 require_relative './modules/music_methods'
+require_relative './modules/game_methods'
 
 class App
   include MusicMethods
@@ -9,6 +10,8 @@ class App
 
   include BookModule
   include LabelModule
+
+  include GameMethods
 
   def initialize
     @options = {
@@ -28,17 +31,18 @@ class App
     @genre_arr = File.exist?(GENRE_FILE) ? JSON.parse(File.read(GENRE_FILE)) : []
   end
 
-  def list_all_games
-    puts 'Hello'
-  end
+  # def list_all_games
+  #  puts 'Hello'
+  # end
 
-  def list_all_authors
-    puts 'Hello'
-  end
+  # def list_all_authors
+  #  puts 'Hello'
+  # end
 
-  def add_game
-    puts 'Hello'
-  end
+  # def add_game
+  #  puts 'Hello'
+  # end
+
 
   def exit
     puts 'Hello'
