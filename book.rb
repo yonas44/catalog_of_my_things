@@ -1,5 +1,5 @@
 require_relative './item'
-require_relative './book_module'
+require_relative './modules/book_module'
 
 class Book < Item
   attr_accessor :publisher, :cover_state
@@ -14,12 +14,12 @@ class Book < Item
     super || @cover_state == 'bad'
   end
 
-  def to_json
-    { 
-      publisher: @publisher, 
+  def to_json(*_args)
+    {
+      publisher: @publisher,
       cover_state: @cover_state,
       publish_date: @publish_date,
-      label: self.label
+      label: label
     }
   end
 end

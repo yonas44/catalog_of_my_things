@@ -1,12 +1,12 @@
-require_relative 'book_module'
-require_relative 'label_module'
-
+require_relative './modules/book_module'
+require_relative './modules/label_module'
 require_relative './modules/music_methods'
 
 class App
   include MusicMethods
 
   attr_reader :options
+
   include BookModule
   include LabelModule
 
@@ -28,35 +28,11 @@ class App
     @genre_arr = File.exist?(GENRE_FILE) ? JSON.parse(File.read(GENRE_FILE)) : []
   end
 
-  def list_all_books
-    puts 'Hello'
-  end
-
-  def list_all_music_albums
-    puts 'Hello'
-  end
-
   def list_all_games
     puts 'Hello'
   end
 
-  def list_all_genres
-    puts 'Hello'
-  end
-
-  def list_all_labels
-    puts 'Hello'
-  end
-
   def list_all_authors
-    puts 'Hello'
-  end
-
-  def add_book
-    puts 'Hello'
-  end
-
-  def add_music_album
     puts 'Hello'
   end
 

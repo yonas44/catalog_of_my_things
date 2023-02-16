@@ -13,13 +13,13 @@ class Label
 
   def add_item(item)
     @items << item
-    item.label = self.title
+    item.label = title
   end
 
-  def to_json
-    { 
-      title: @title, 
-      color: @color, 
+  def to_json(*_args)
+    {
+      title: @title,
+      color: @color,
       items: @items
     }
   end
